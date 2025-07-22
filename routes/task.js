@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
   }
 });
 router.get("/", async (req, res) => {
-  const userId = req.body.userId;
+  const userId = req.query.userId;
   try {
     const tasks = await Task.find({ userId });
     res.status(200).json(tasks);

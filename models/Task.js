@@ -8,7 +8,7 @@ const taskSchema = new mongoose.Schema(
     category: { type: String, required: true },
     date: { type: String, required: true },
     time: { type: String, required: true },
-    subtasks: { type: Array },
+    subtasks: [{ title: { type: String }, completed: { type: Boolean } }],
     completed: { type: Boolean, default: false },
     userId: {
       type: mongoose.Schema.Types.ObjectId,

@@ -5,6 +5,13 @@ const mongoose = require("mongoose");
 const userRouter = require("./routes/user");
 const authRouter = require("./routes/auth");
 const taskRouter = require("./routes/task");
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
